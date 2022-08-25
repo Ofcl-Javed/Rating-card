@@ -1,0 +1,166 @@
+@use 'var';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var.$font;
+    -webkit-tap-highlight-color: transparent;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    @include var.gridBox;
+    width: 100vw;
+    height: 100vh;
+    background: var.$bg;
+    padding: 2.5rem;
+}
+main{
+    background: var.$cardBg;
+    padding: 3rem 3.5rem;
+    border-radius: 3rem;
+    display: grid;
+    height: 41.5rem;
+    width: 41rem;
+    gap: 3.25rem;
+    .star{
+        @include var.gridBox;
+        background: $rating;
+        padding: 1.5rem;
+        border-radius: 50%;
+        width: fit-content;
+        height: fit-content;
+    }
+    .description{
+        display: grid;
+        gap: 1rem;
+        h1{
+            color: var.$text1;
+            font-size: 2.75rem;
+            font-weight: 500;
+            letter-spacing: .1rem;
+        }
+        p{
+            color: var.$text2;
+            font-size: 1.5rem;
+            line-height: 2.35rem;
+        }
+    }
+    .rating{
+        @include var.gridBox;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        button{
+            color: var.$text2;
+            font-size: 1.6rem;
+            border-radius: 50%;
+            background: $rating;
+            @include var.gridBox;
+            width: 5rem;
+            height: 5rem;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover{
+                background: var.$text2;
+                color: var.$text1;
+            }
+            &:focus, &:active{
+                background: var.$primary;
+                color: var.$text1;
+            }
+        }
+    }
+    .submit{
+        width: 100%;
+        height: 4.5rem;
+        @include var.gridBox;
+        background: var.$primary;
+        border-radius: 10rem;
+        cursor: pointer;
+        color: var.$text1;
+        button{
+            background: none;
+            color: inherit;
+            outline: none;
+            border: none;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            letter-spacing: .25rem;
+            cursor: pointer;
+        }
+        &:hover{
+            background: var.$text1;
+            color: var.$primary;
+        }
+    }   
+}
+#thanks{
+    background: var.$cardBg;
+    padding: 3rem 3.5rem;
+    border-radius: 3rem;
+    // display: grid;
+    display: none;
+    justify-items: center;
+    align-content: center;
+    height: 41.5rem;
+    width: 41rem;
+    gap: 3.25rem;
+    .rated{
+        background: #262f38;
+        color: var.$primary;
+        font-size: 1.4rem;
+        padding: .8rem 2rem;
+        border-radius: 100rem;
+    }
+    .msg{
+        @include var.gridBox;
+        gap: 1rem;
+        h1{
+            color: var.$text1;
+            font-size: 2.75rem;
+            font-weight: 500;
+            letter-spacing: .1rem;
+        }
+        p{
+            color: var.$text2;
+            font-size: 1.5rem;
+            line-height: 2.35rem;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 425px){
+    html{
+        font-size: 54%;
+    }
+    main{
+        width: 38rem;
+        border-radius: 2rem;
+        padding: 3rem 2.5rem;
+        gap: 2rem;
+        .description{
+            p{
+                font-size: 1.6rem;
+            }
+        }
+        .submit{
+            height: 5rem;
+        }
+    }
+    #thanks{
+        width: 38rem;
+        border-radius: 2rem;
+        gap: 3rem;
+        .rated{
+            font-size: 1.6rem;
+        }
+        .msg{
+            p{
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

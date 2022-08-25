@@ -1,0 +1,11 @@
+$primary: hsl(25, 97%, 53%);
+$text1: hsl(0, 0%, 100%);
+$text2: hsl(217, 12%, 63%);
+$rating: #262f38;
+$cardBg: hsl(215, 22%, 15%);
+$bg: hsl(216, 12%, 8%);
+$font: 'Overpass', sans-serif;
+@mixin gridBox {
+    display: grid;
+    place-items: center;
+}
